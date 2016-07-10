@@ -21,7 +21,7 @@ public class Utils {
     public static final String BASE_URL = "http://private-618f4-artapi.apiary-mock.com";
     public static final String CONTENT_TYPE_HEADER = "Content-Type";
     public static final String CONTENT_TYPE_JSON = "application/json";
-    public static final String CUSTOM_FONT_LOCATION = "fonts/custom_font.ttf";
+    public static final String CUSTOM_FONT_LOCATION = "fonts/Pacifico.ttf";
 
     public static Retrofit getRetrofitInstance() {
 
