@@ -10,6 +10,7 @@ import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.main.fragments.DetailPaintingFragment;
 import com.grillo.edx.artapi.main.fragments.PaintingListFragment;
 import com.grillo.edx.artapi.models.Painting;
+import com.grillo.edx.artapi.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int PAINTINGS_LIST_LAYOUT = 0;
     public static final int DETAIL_PAINTING_LAYOUT = 1;
     public Painting painting;
-    public Typeface openSansLight;
+    public Typeface customTypeFace;
     private MainActivity activity;
     private Fragment fragment;
     private int currentFragment;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        openSansLight = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/OpenSans_light.ttf");
+        customTypeFace = Typeface.createFromAsset(getApplicationContext().getAssets(), Utils.CUSTOM_FONT_LOCATION);
 
         activity = this;
         displayListPaintings();

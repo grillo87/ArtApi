@@ -3,6 +3,15 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="activity_splash_container_height">90dp</dimen>
+    <dimen name="activity_splash_circle_radious">60dp</dimen>
+    <dimen name="activity_splash_circle_left_margin">30dp</dimen>
+    <dimen name="activity_splash_circle_right_margin">30dp</dimen>
+    <dimen name="activity_splash_circle_internal_margin">5dp</dimen>
+    <dimen name="activity_splash_circle_text_size">20sp</dimen>
+    <dimen name="activity_splash_develop_by_container_width">200dp</dimen>
+    <dimen name="activity_splash_developed_by_margin_right">10dp</dimen>
+
     <dimen name="dialog_loading_container_height">80dp</dimen>
     <dimen name="dialog_loading_containter_margin">10dp</dimen>
     <dimen name="dialog_loading_text_message_margin_left">5dp</dimen>

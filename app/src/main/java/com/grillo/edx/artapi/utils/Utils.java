@@ -2,6 +2,7 @@ package com.grillo.edx.artapi.utils;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.Typeface;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class Utils {
     public static final String BASE_URL = "http://private-618f4-artapi.apiary-mock.com";
     public static final String CONTENT_TYPE_HEADER = "Content-Type";
     public static final String CONTENT_TYPE_JSON = "application/json";
+    public static final String CUSTOM_FONT_LOCATION = "fonts/custom_font.ttf";
 
     public static Retrofit getRetrofitInstance() {
 
@@ -36,7 +38,7 @@ public class Utils {
     }
 
 
-    public static Dialog showLoadingDialog(Activity activity, String dialogText) {
+    public static Dialog showLoadingDialog(Activity activity, String dialogText, Typeface customTypeFace) {
 
         Dialog dialog = new Dialog(activity);
         dialog.setCancelable(false);
@@ -44,6 +46,7 @@ public class Utils {
         dialog.setContentView(R.layout.dialog_loading);
         TextView dialogMessage = (TextView) dialog.findViewById(R.id.dialog_loading_text_message);
         dialogMessage.setText(dialogText);
+        dialogMessage.setTypeface(customTypeFace);
 
         dialog.show();
 

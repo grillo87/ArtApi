@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">ArtApi</string>
 
+    <string name="activity_splash_a_letter">A</string>
+    <string name="activity_splash_r_letter">R</string>
+    <string name="activity_splash_t_letter">T</string>
+    <string name="activity_splash_s_letter">S</string>
+    <string name="activity_splash_developed_by">Desarrollado por\nIng. José Grillo</string>
+
     <string name="loading_paints">Cargando pinturas</string>
     <string name="fragment_detail_painting_year_format">(%s)</string>
 

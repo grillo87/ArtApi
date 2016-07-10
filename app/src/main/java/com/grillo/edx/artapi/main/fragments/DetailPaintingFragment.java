@@ -48,14 +48,14 @@ public class DetailPaintingFragment extends Fragment {
                 .into(fragmentDetailPaintingImageView);
 
         fragmentDetailPaintingTextView.setText(painting.getName());
-        fragmentDetailPaintingTextView.setTypeface(activity.openSansLight);
+        fragmentDetailPaintingTextView.setTypeface(activity.customTypeFace);
 
         String fragmentDetailPaintingAuthorYearFormatString = painting.getAuthor() + " " + String.format(getString(R.string.fragment_detail_painting_year_format), painting.getYear());
         fragmentDetailPaintingAuthorTextView.setText(fragmentDetailPaintingAuthorYearFormatString);
-        fragmentDetailPaintingAuthorTextView.setTypeface(activity.openSansLight);
+        fragmentDetailPaintingAuthorTextView.setTypeface(activity.customTypeFace);
 
         fragmentDetailPaintingDetailTextView.setText(painting.getDescription());
-        fragmentDetailPaintingDetailTextView.setTypeface(activity.openSansLight);
+        fragmentDetailPaintingDetailTextView.setTypeface(activity.customTypeFace);
 
 
         return rootView;

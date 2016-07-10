@@ -25,15 +25,15 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private LayoutInflater layoutInflater;
     private ArrayList<Painting> items;
     private AdapterInterface adapterInterface;
-    private Typeface openSansLight;
+    private Typeface customTypeFace;
 
-    public PaintingListAdapter(Context context, ArrayList<Painting> items, AdapterInterface adapterInterface, Typeface openSansLight) {
+    public PaintingListAdapter(Context context, ArrayList<Painting> items, AdapterInterface adapterInterface, Typeface customTypeFace) {
 
         this.items = items;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(this.context);
         this.adapterInterface = adapterInterface;
-        this.openSansLight = openSansLight;
+        this.customTypeFace = customTypeFace;
 
     }
 
@@ -59,7 +59,7 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 .into(viewHolder.getPaintViewHolderImageView());
 
         viewHolder.getPaintViewHolderTextView().setText(painting.getName());
-        viewHolder.getPaintViewHolderTextView().setTypeface(openSansLight);
+        viewHolder.getPaintViewHolderTextView().setTypeface(customTypeFace);
 
     }
 

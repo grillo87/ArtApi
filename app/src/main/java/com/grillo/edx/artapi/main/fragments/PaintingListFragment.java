@@ -52,7 +52,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
         activity = (MainActivity) getActivity();
         fragment = this;
 
-        dialog = Utils.showLoadingDialog(activity, activity.getResources().getString(R.string.loading_paints));
+        dialog = Utils.showLoadingDialog(activity, activity.getResources().getString(R.string.loading_paints), activity.customTypeFace);
         retrofit = Utils.getRetrofitInstance();
         PaintingEndPointInterface paintingEndPointInterface = retrofit.create(PaintingEndPointInterface.class);
 
@@ -77,7 +77,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
         dialog.dismiss();
         paintings = response.body();
 
-        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), paintings, fragment, activity.openSansLight);
+        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), paintings, fragment, activity.customTypeFace);
         fragmentPaintingListRecyclerView.setAdapter(paintingListAdapter);
         fragmentPaintingListRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
 
@@ -86,7 +86,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
     @Override
     public void onFailure(Call<ArrayList<Painting>> call, Throwable t) {
 
-        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), new ArrayList<Painting>(), fragment, activity.openSansLight);
+        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), new ArrayList<Painting>(), fragment, activity.customTypeFace);
         fragmentPaintingListRecyclerView.setAdapter(paintingListAdapter);
         fragmentPaintingListRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
 
