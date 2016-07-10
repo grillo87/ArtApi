@@ -2,5 +2,6 @@
     <string name="app_name">ArtApi</string>
 
     <string name="loading_paints">Cargando pinturas</string>
+    <string name="fragment_detail_painting_year_format">(%s)</string>
 
 </resources>

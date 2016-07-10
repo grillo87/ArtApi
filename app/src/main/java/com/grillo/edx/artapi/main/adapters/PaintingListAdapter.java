@@ -1,6 +1,7 @@
 package com.grillo.edx.artapi.main.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,13 +25,15 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private LayoutInflater layoutInflater;
     private ArrayList<Painting> items;
     private AdapterInterface adapterInterface;
+    private Typeface openSansLight;
 
-    public PaintingListAdapter(Context context, ArrayList<Painting> items, AdapterInterface adapterInterface) {
+    public PaintingListAdapter(Context context, ArrayList<Painting> items, AdapterInterface adapterInterface, Typeface openSansLight) {
 
         this.items = items;
         this.context = context;
         this.layoutInflater = LayoutInflater.from(this.context);
         this.adapterInterface = adapterInterface;
+        this.openSansLight = openSansLight;
 
     }
 
@@ -56,6 +59,7 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 .into(viewHolder.getPaintViewHolderImageView());
 
         viewHolder.getPaintViewHolderTextView().setText(painting.getName());
+        viewHolder.getPaintViewHolderTextView().setTypeface(openSansLight);
 
     }
 

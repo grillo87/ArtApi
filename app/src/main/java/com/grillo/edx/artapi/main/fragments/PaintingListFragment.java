@@ -65,6 +65,9 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
     @Override
     public void onItemClick(View view, int position) {
 
+        activity.painting = paintings.get(position);
+        activity.displayViewAnimation(MainActivity.DETAIL_PAINTING_LAYOUT);
+
 
     }
 
@@ -74,7 +77,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
         dialog.dismiss();
         paintings = response.body();
 
-        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), paintings, fragment);
+        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), paintings, fragment, activity.openSansLight);
         fragmentPaintingListRecyclerView.setAdapter(paintingListAdapter);
         fragmentPaintingListRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
 
@@ -83,7 +86,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
     @Override
     public void onFailure(Call<ArrayList<Painting>> call, Throwable t) {
 
-        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), new ArrayList<Painting>(), fragment);
+        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), new ArrayList<Painting>(), fragment, activity.openSansLight);
         fragmentPaintingListRecyclerView.setAdapter(paintingListAdapter);
         fragmentPaintingListRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
 

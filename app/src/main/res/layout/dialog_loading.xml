@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="0.2"
-        wheel:matProg_barColor="@color/green"
+        wheel:matProg_barColor="@color/colorPrimary"
         wheel:matProg_progressIndeterminate="true" />
 
 

@@ -13,6 +13,8 @@ public class Painting {
     private String url;
     private String name;
     private String author;
+    private String year;
+    private String description;
 
     public int getIdServer() {
         return idServer;
@@ -44,5 +46,21 @@ public class Painting {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
