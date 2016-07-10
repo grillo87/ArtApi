@@ -1,0 +1,57 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# artapi
+
+Get all the paintings of the museum
+
+## Group Paintings
+
+Servicios web relacionado con la obtención de las mesas a dibujar en las apps
+
+## Get Paintings [/getPaintings]
+### Get Paintings [POST]
+
++ Request (application/json)
+
+        {
+        
+        }
+
++ Response 201 (application/json)
+
+        
+        [
+                {
+                    "url": "http://www.museoreinasofia.es/sites/default/files/obras/DE00050.jpg",
+                    "name": "Guarnica",
+                    "id": 1,
+                    "author": "Pablo Picasso",
+                    "year" : "1937",
+                    "description": "Guernica es un famoso cuadro de Pablo Picasso, pintado entre los meses de mayo y junio de 1937, cuyo título alude al bombardeo de Guernica, ocurrido el 26 de abril de dicho año, durante la Guerra Civil Española. Fue realizado por encargo del Director General de Bellas Artes, Josep Renau a petición del Gobierno de la Segunda República Española para ser expuesto en el pabellón español durante la Exposición Internacional de 1937 en París, con el fin de atraer la atención del público hacia la causa republicana en plena Guerra Civil Española."
+                },
+                {
+                    "url": "http://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg",
+                    "name": "La Persistencia de la Memoria",
+                    "id": 2,
+                    "author": "Salvador Dalí",
+                    "year": "1931",
+                    "description": "La persistencia de la memoria, conocido también como Los relojes blandos es un famoso cuadro del pintor español Salvador Dalí pintado en 1931. Realizado mediante la técnica del óleo sobre lienzo, es de estilo surrealista y sus medidas son 24 x 33 cm. La pintura fue exhibida en la primera exposición individual de Dalí en la Galerie Pierre Colle de París,1 del 3 al 15 de junio de 1931, y en enero de 1932 en una exposición en la Julien Levy Gallery de Nueva York, Surrealism: Paintings, Drawings and Photographs.1 Se conserva en el MoMA (Museo de Arte Moderno) de Nueva York, donde llegó en 1934 como donativo de Helen Lansdowne Resor, magnate de la publicidad que posteriormente llegaría a ser patrona del museo; el precio pagado fue de 400 dólares.2 En una revisión posterior del cuadro, Dalí creó La desintegración de la persistencia de la memoria."
+                },
+                {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/350px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+                    "name": "La Noche Estrellada",
+                    "id": 3,
+                    "author": "Vincent van Gogh",
+                    "year": "1889",
+                    "description": "La noche estrellada (en neerlandés De sterrennacht) es una obra maestra del pintor postsimpresionista Vincent van Gogh. El cuadro muestra la vista exterior durante la noche desde la ventana del cuarto del sanatorio de Saint-Rémy-de-Provence, donde se recluyó hacia el final de su vida. Sin embargo, la obra fue pintada durante el día, de memoria. Data de mediados de 1889, trece meses antes de la muerte de van Gogh. Desde 1941 forma parte de la colección permanente del Museo de Arte Moderno de Nueva York. Considerado como el magnum opus de van Gogh, el cuadro ha sido reproducido en numerosas ocasiones, siendo una de sus obras más conocidas. Usó óleo humedecido y pinceles finos."
+                },
+                {
+                    "url": "https://marisolroman.files.wordpress.com/2013/01/el-almuerzo-de-los-remeros.jpg",
+                    "name": "Almuerzo de Remeros",
+                    "id": 4,
+                    "author": "Pierre-Auguste Renoir",
+                    "year": "1881",
+                    "description": "Almuerzo de remeros (1881, en francés: Le déjeuner des canotiers) es un cuadro del pintor impresionista francés Pierre-Auguste Renoir, que se conserva en la Colección Phillips, en Washington D. C. El cuadro muestra un grupo de amigos de Renoir descansando en una terraza del restaurante Maison Fournaise1 sobre el río Sena en Chatou, Francia. La escena muestra un clima de alegría popular que se asemeja a una obra anterior suya, Baile en el Moulin de la Galette (1876). Por otra parte, Renoir ya había retratado tanto el local como el tema del remo en otra obra, Déjeuner chez Fournaise (1875)."
+                }
+        ]
