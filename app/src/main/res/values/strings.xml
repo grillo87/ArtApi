@@ -9,5 +9,6 @@
 
     <string name="loading_paints">Cargando pinturas</string>
     <string name="fragment_detail_painting_year_format">(%s)</string>
+    <string name="title_activity_painting_list">PaintingListActivity</string>
 
 </resources>

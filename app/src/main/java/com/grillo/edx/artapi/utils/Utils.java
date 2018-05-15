@@ -2,13 +2,18 @@ package com.grillo.edx.artapi.utils;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
+import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.grillo.edx.artapi.R;
+import com.grillo.edx.artapi.base.BaseActivity;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -52,6 +57,25 @@ public class Utils {
 
         return dialog;
 
+
+    }
+
+    public static void tintStatusBar(BaseActivity activity) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            Window window = activity.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(ContextCompat.getColor(activity, R.color.bleu_de_france));
+
+        }
+
+    }
+
+
+    public static void setPortaitOrientation(BaseActivity activity) {
+        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
 
     }
 

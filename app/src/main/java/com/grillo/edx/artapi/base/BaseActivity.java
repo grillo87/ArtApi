@@ -1,0 +1,64 @@
+package com.grillo.edx.artapi.base;
+
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+
+import com.grillo.edx.artapi.injector.component.ApplicationComponent;
+import com.grillo.edx.artapi.navigation.Navigator;
+import com.grillo.edx.artapi.utils.Utils;
+
+import javax.inject.Inject;
+
+public abstract class BaseActivity extends AppCompatActivity {
+
+    public String LOG_TAG = this.getClass().getSimpleName();
+    protected Typeface customFont;
+
+    @Inject
+    protected Navigator navigator;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Utils.setPortaitOrientation(this);
+        Utils.tintStatusBar(this);
+        customFont = Typeface.createFromAsset(getApplicationContext().getAssets(), "fonts/Pacifico.ttf");
+
+        initializeInjector(getApplicationComponent());
+        setViewElements();
+        setViewsElementsCustomFont();
+        initializePresenter();
+
+    }
+
+
+    private ApplicationComponent getApplicationComponent() {
+        return ((AndroidApplication) getApplication()).getComponent();
+    }
+
+    public BaseActivity getActivity() {
+
+        return this;
+
+    }
+
+    public Typeface getCustomFont() {
+        return customFont;
+    }
+
+    public Navigator getNavigator() {
+        return navigator;
+    }
+
+    protected abstract void initializeInjector(ApplicationComponent applicationComponent);
+
+    protected abstract void setViewElements();
+
+    protected abstract void setViewsElementsCustomFont();
+
+    protected abstract void initializePresenter();
+
+}

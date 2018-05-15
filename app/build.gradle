@@ -27,16 +27,20 @@ dependencies {
     implementation project(':data')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
     testImplementation 'junit:junit:4.12'
     compileOnly 'org.glassfish:javax.annotation:10.0-b28'
-
-
 
     implementation "com.android.support:support-v4:${libs.support}"
     implementation "com.android.support:recyclerview-v7:${libs.recyclerview}"
     implementation "com.android.support:appcompat-v7:${libs.appcompat}"
 
     implementation "com.pnikosis:materialish-progress:${libs.materialish_progress}"
+
+    annotationProcessor "com.google.dagger:dagger-compiler:${libs.dagger}"
+    compileOnly "org.glassfish:javax.annotation:${libs.javax_annotation}"
+    implementation "com.google.dagger:dagger:${libs.dagger}"
 
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
