@@ -1,25 +1,20 @@
-package com.grillo.edx.artapi.domain.bean;
+package com.grillo.edx.artapi.data.bean;
 
-import com.google.gson.annotations.SerializedName;
+public class PaintingResponseDto {
 
-/**
- * Created by jose on 09/07/16.
- */
-public class Painting {
-
-    private int idServer;
+    private int id;
     private String url;
     private String name;
     private String author;
     private String year;
     private String description;
 
-    public int getIdServer() {
-        return idServer;
+    public int getId() {
+        return id;
     }
 
-    public void setIdServer(int idServer) {
-        this.idServer = idServer;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUrl() {
