@@ -3,9 +3,14 @@
 buildscript {
     repositories {
         jcenter()
+        google()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'com.android.tools.build:gradle:3.1.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -15,9 +20,62 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyMMddHHmm')
+    def f = new File(project.rootDir, 'version')
+    f.write(formattedDate)
+    return formattedDate
+}
+
+
+ext {
+    configuration = [
+            package             : "com.grillo.edx.artapi",
+            buildToolsVersion   : "27.1.1",
+            compileVersion      : 27,
+            minSdk              : 15,
+            targetSdk           : 27,
+            version_versionMajor: "1",
+            version_versionMinor: "0",
+            version_versionPatch: "0"
+    ]
+
+    libraries = [
+            appcompat             : "27.1.1",
+            support               : "27.1.1",
+            design                : "27.1.1",
+            recyclerview          : "27.1.1",
+            butterknife           : "8.2.1",
+            glide                 : "3.7.0",
+            retrofit              : "2.1.0",
+            interceptor           : "3.4.1",
+            okhttp                : "2.2.0",
+            rxandroid             : "1.2.1",
+            rxjava                : "1.1.6",
+            rxproguard            : "1.1.10.0",
+            retrolambda           : "2.3.0",
+            dagger                : "2.5",
+            annotation            : "1.0",
+            javax_annotation      : "10.0-b28",
+            leakCanary            : "1.4",
+            sugar                 : "1.4",
+            materialish_progress  : "1.5",
+            logging_interceptor   : "2.0.2",
+            gson                  : "2.7"
+    ]
+
 }

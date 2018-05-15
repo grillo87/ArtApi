@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.main.activity.MainActivity;
-import com.grillo.edx.artapi.models.Painting;
+import com.grillo.edx.artapi.domain.bean.Painting;
 
 /**
  * A simple {@link Fragment} subclass.

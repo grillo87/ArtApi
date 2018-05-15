@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+def cfg = rootProject.ext.configuration
+def libs = rootProject.ext.libraries
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':domain')
+
+    implementation "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${libs.interceptor}"
+    implementation "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
+
+    implementation "com.squareup.retrofit2:adapter-rxjava:${libs.retrofit}"
+    implementation "com.squareup.okhttp:okhttp:${libs.okhttp}"
+    implementation "com.squareup.okhttp:okhttp-urlconnection:${libs.okhttp}"
+
+    implementation "io.reactivex:rxjava:${libs.rxjava}"
+    implementation "com.google.dagger:dagger:${libs.dagger}"
+    implementation "org.glassfish:javax.annotation:${libs.javax_annotation}"
+    implementation "com.github.ihsanbal:LoggingInterceptor:${libs.logging_interceptor}"
+}

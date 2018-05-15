@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+def libs = rootProject.ext.libraries
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "io.reactivex:rxjava:${libs.rxjava}"
+    implementation "com.google.dagger:dagger:${libs.dagger}"
+    implementation "com.google.code.gson:gson:${libs.gson}"
+
+}

@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.main.interfaces.AdapterInterface;
 import com.grillo.edx.artapi.main.viewholders.PaintViewHolder;
-import com.grillo.edx.artapi.models.Painting;
+import com.grillo.edx.artapi.domain.bean.Painting;
 
 import java.util.ArrayList;
 

@@ -1,13 +1,14 @@
 package com.grillo.edx.artapi.web;
 
 import com.grillo.edx.artapi.models.EmptyRequest;
-import com.grillo.edx.artapi.models.Painting;
+import com.grillo.edx.artapi.domain.bean.Painting;
 import com.grillo.edx.artapi.utils.Utils;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 
@@ -16,7 +17,7 @@ import retrofit2.http.POST;
  */
 public interface PaintingEndPointInterface {
 
-    @POST("getPaintings")
+    @GET("paintings")
     Call<ArrayList<Painting>> getPaintings(@Header(Utils.CONTENT_TYPE_HEADER) String contentType, @Body EmptyRequest emptyRequest);
 
 }

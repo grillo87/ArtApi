@@ -1,4 +1,4 @@
-package com.grillo.edx.artapi.models;
+package com.grillo.edx.artapi.domain.bean;
 
 import com.google.gson.annotations.SerializedName;
 

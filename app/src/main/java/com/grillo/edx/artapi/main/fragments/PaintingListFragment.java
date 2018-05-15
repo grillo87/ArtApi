@@ -15,7 +15,7 @@ import com.grillo.edx.artapi.main.activity.MainActivity;
 import com.grillo.edx.artapi.main.adapters.PaintingListAdapter;
 import com.grillo.edx.artapi.main.interfaces.AdapterInterface;
 import com.grillo.edx.artapi.models.EmptyRequest;
-import com.grillo.edx.artapi.models.Painting;
+import com.grillo.edx.artapi.domain.bean.Painting;
 import com.grillo.edx.artapi.utils.Utils;
 import com.grillo.edx.artapi.web.PaintingEndPointInterface;
 

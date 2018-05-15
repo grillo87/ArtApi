@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.main.fragments.DetailPaintingFragment;
 import com.grillo.edx.artapi.main.fragments.PaintingListFragment;
-import com.grillo.edx.artapi.models.Painting;
+import com.grillo.edx.artapi.domain.bean.Painting;
 import com.grillo.edx.artapi.utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
