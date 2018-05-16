@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.base.BaseActivity;
@@ -76,6 +77,8 @@ public class PaintingListActivity extends BaseActivity implements PaintingListVi
     @Override
     public void onItemClick(View view, int position) {
 
+        navigator.goToPaintingDetail(getActivity(), paintingListAdapter.getElementAtIndex(position));
+
     }
 
     @Override
@@ -109,13 +112,13 @@ public class PaintingListActivity extends BaseActivity implements PaintingListVi
     @Override
     public void showGenericErrorMessage() {
 
-        Snackbar.make(activityPaintingListRecyclerView, getActivity().getResources().getString(R.string.activity_painting_list_error_message), Snackbar.LENGTH_LONG).show();
+        Toast.makeText(getActivity().getApplicationContext(), getActivity().getResources().getString(R.string.activity_painting_list_error_message), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void showErrorMessage(String message) {
 
-        Snackbar.make(activityPaintingListRecyclerView, message, Snackbar.LENGTH_LONG).show();
+        Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
 
     }
 }

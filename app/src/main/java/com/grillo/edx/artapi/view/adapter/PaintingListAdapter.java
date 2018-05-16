@@ -65,6 +65,12 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     }
 
+    public PaintingModel getElementAtIndex(int position) {
+
+        return this.items.get(position);
+
+    }
+
     @Override
     public int getItemCount() {
         return items.size();

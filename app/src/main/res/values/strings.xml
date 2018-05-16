@@ -5,11 +5,13 @@
     <string name="activity_splash_r_letter">R</string>
     <string name="activity_splash_t_letter">T</string>
     <string name="activity_splash_s_letter">S</string>
-    <string name="activity_splash_developed_by">Desarrollado por\nIng. José Grillo</string>
+    <string name="activity_splash_developed_by">Develop by\nEng. José Grillo</string>
 
-    <string name="loading_paints">Cargando pinturas</string>
+    <string name="loading_paints">Getting paintings</string>
     <string name="fragment_detail_painting_year_format">(%s)</string>
+    <string name="activity_painting_detail_author_year_format">%s1 (%s2)</string>
     <string name="title_activity_painting_list">PaintingListActivity</string>
-    <string name="activity_painting_list_error_message">There has been an error trying to get the pictures</string>
+    <string name="activity_painting_list_error_message">There has been an error trying to get the paintings</string>
+    <string name="activity_painting_detail_error_message">There has been an error trying to set the painting elements</string>
 
 </resources>

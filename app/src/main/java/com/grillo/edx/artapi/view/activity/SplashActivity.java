@@ -92,7 +92,6 @@ public class SplashActivity extends BaseActivity implements SplashView {
         activitySplashRTextview.setTypeface(getCustomFont());
         activitySplashTTextview.setTypeface(getCustomFont());
         activitySplashSTextview.setTypeface(getCustomFont());
-        activitySplashDevelopedByTextview.setTypeface(getCustomFont());
 
     }
 
