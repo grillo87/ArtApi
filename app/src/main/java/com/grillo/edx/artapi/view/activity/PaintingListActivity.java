@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.grillo.edx.artapi.R;
@@ -57,6 +59,8 @@ public class PaintingListActivity extends BaseActivity implements PaintingListVi
     @Override
     protected void setViewElements() {
 
+        appToolbar = (Toolbar) findViewById(R.id.app_toolbar);
+        appToolbarTitle = (TextView) findViewById(R.id.app_toolbar_title);
         activityPaintingListRecyclerView = (RecyclerView) findViewById(R.id.activity_painting_list_recycler_view);
 
     }

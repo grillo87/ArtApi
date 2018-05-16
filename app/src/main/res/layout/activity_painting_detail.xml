@@ -5,51 +5,61 @@
     android:orientation="vertical"
     tools:context="com.grillo.edx.artapi.view.activity.PaintingDetailActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbar" />
+
+    </android.support.design.widget.AppBarLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fragment_detail_painting_header_container">
+        android:layout_height="@dimen/activity_painting_detail_paint_height">
 
         <ImageView
             android:id="@+id/activity_detail_painting_image_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fragment_detail_painting_image_view_height"
+            android:layout_height="@dimen/activity_detail_painting_image_view_height"
             android:scaleType="fitXY" />
 
-        <ImageView
+        <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fragment_detail_painting_bar_height"
+            android:layout_height="@dimen/activity_painting_detail_bar_height"
             android:layout_alignParentBottom="true"
             android:background="@drawable/barra" />
 
         <TextView
             android:id="@+id/activity_detail_painting_text_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/fragment_detail_painting_text_view_height"
+            android:layout_height="@dimen/activity_detail_painting_text_view_height"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/fragment_detail_painting_text_view_margin_bottom"
-            android:layout_marginLeft="@dimen/fragment_detail_painting_text_view_margin_left"
+            android:layout_marginBottom="@dimen/activity_detail_painting_text_view_margin_bottom"
+            android:layout_marginLeft="@dimen/activity_detail_painting_text_view_margin_left"
             android:textColor="@color/white"
-            android:textSize="@dimen/fragment_detail_painting_text_view_text_size" />
+            android:textSize="@dimen/activity_detail_painting_text_view_text_size" />
 
     </RelativeLayout>
 
     <TextView
         android:id="@+id/activity_detail_painting_author_text_view"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fragment_detail_painting_author_text_view_height"
-        android:layout_marginBottom="@dimen/fragment_detail_painting_author_text_view_margin_bottom"
-        android:layout_marginLeft="@dimen/fragment_detail_painting_author_text_view_margin_left"
-        android:layout_marginRight="@dimen/fragment_detail_painting_author_text_view_margin_right"
+        android:layout_height="@dimen/activity_detail_painting_author_text_view_height"
+        android:layout_marginBottom="@dimen/activity_detail_painting_author_text_view_margin_bottom"
+        android:layout_marginLeft="@dimen/activity_detail_painting_author_text_view_margin_left"
+        android:layout_marginRight="@dimen/activity_detail_painting_author_text_view_margin_right"
         android:gravity="center|left"
         android:textColor="@color/black"
-        android:textSize="@dimen/fragment_detail_painting_author_text_view_text_size" />
+        android:textSize="@dimen/activity_detail_painting_author_text_view_text_size" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/black" />
+        android:layout_height="@dimen/activity_painting_detail_divider_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/activity_painting_detail_lateral_margins"
+        android:layout_marginRight="@dimen/activity_painting_detail_lateral_margins"
+        android:background="@color/bleu_de_france" />
 
 
     <ScrollView
@@ -64,11 +74,11 @@
                 android:id="@+id/activity_detail_painting_detail_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/fragment_detail_painting_detail_text_view_margin_bottom"
-                android:layout_marginLeft="@dimen/fragment_detail_painting_detail_text_view_margin_left"
-                android:layout_marginRight="@dimen/fragment_detail_painting_detail_text_view_margin_right"
+                android:layout_marginBottom="@dimen/activity_detail_painting_detail_text_view_margin_bottom"
+                android:layout_marginLeft="@dimen/activity_detail_painting_detail_text_view_margin_left"
+                android:layout_marginRight="@dimen/activity_detail_painting_detail_text_view_margin_right"
                 android:textColor="@color/black"
-                android:textSize="@dimen/fragment_detail_painting_detail_text_view_text_size" />
+                android:textSize="@dimen/activity_detail_painting_detail_text_view_text_size" />
 
         </LinearLayout>
 

@@ -1,11 +1,7 @@
 package com.grillo.edx.artapi.view.activity;
 
-import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,9 +13,7 @@ import com.grillo.edx.artapi.injector.component.ApplicationComponent;
 import com.grillo.edx.artapi.injector.component.DaggerPaintingComponent;
 import com.grillo.edx.artapi.injector.module.ActivityModule;
 import com.grillo.edx.artapi.injector.module.PaintingModule;
-import com.grillo.edx.artapi.main.activity.MainActivity;
 import com.grillo.edx.artapi.presenter.SplashPresenter;
-import com.grillo.edx.artapi.utils.Utils;
 import com.grillo.edx.artapi.view.views.SplashView;
 
 import java.util.Timer;

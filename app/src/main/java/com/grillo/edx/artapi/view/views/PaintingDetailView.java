@@ -16,4 +16,6 @@ public interface PaintingDetailView extends View {
 
     void setPaintingPicture(String paintingPicture);
 
+    void setPaintingNameAppBar(String paintingName);
+
 }

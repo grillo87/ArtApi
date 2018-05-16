@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,8 +45,21 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
         setContentView(R.layout.activity_painting_detail);
 
         super.onCreate(savedInstanceState);
-        initializePresenter();
 
+        setUpToolbar(true);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home) {
+            navigator.goToPaintingList(getActivity());
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -60,6 +75,8 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
     @Override
     protected void setViewElements() {
 
+        appToolbar = (Toolbar) findViewById(R.id.app_toolbar);
+        appToolbarTitle = (TextView) findViewById(R.id.app_toolbar_title);
         activityDetailPaintingImageView = (ImageView) findViewById(R.id.activity_detail_painting_image_view);
         activityDetailPaintingTextView = (TextView) findViewById(R.id.activity_detail_painting_text_view);
         activityDetailPaintingAuthorTextView = (TextView) findViewById(R.id.activity_detail_painting_author_text_view);
@@ -72,6 +89,7 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
 
         activityDetailPaintingTextView.setTypeface(getCustomFont());
         activityDetailPaintingAuthorTextView.setTypeface(getCustomFont());
+        appToolbarTitle.setTypeface(getCustomFont());
     }
 
     @Override
@@ -138,6 +156,13 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
                 .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .into(activityDetailPaintingImageView);
+
+    }
+
+    @Override
+    public void setPaintingNameAppBar(String paintingName) {
+
+        setAppBarTittle(String.format(Locale.US, getActivity().getResources().getString(R.string.activity_painting_detail_app_bar_title), paintingName));
 
     }
 }

@@ -61,6 +61,7 @@ public class PaintingDetailPresenter implements Presenter {
 
             paintingDetailView.setPaintingPicture(paintingModel.getUrl());
             paintingDetailView.setPaintingName(paintingModel.getName());
+            paintingDetailView.setPaintingNameAppBar(paintingModel.getName());
             paintingDetailView.setPaintingAuthorAndYear(paintingModel.getAuthor(), paintingModel.getYear());
             paintingDetailView.setPaintingDescription(paintingModel.getDescription());
 

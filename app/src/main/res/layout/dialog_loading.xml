@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="0.2"
-        wheel:matProg_barColor="@color/colorPrimary"
+        wheel:matProg_barColor="@color/bleu_de_france"
         wheel:matProg_progressIndeterminate="true" />
 
 
@@ -23,7 +23,6 @@
         android:layout_marginLeft="@dimen/dialog_loading_text_message_margin_left"
         android:layout_weight="0.8"
         android:gravity="left|center"
-        android:maxLines="1"
         android:textSize="@dimen/dialog_loading_text_message_text_size" />
 
 </LinearLayout>
