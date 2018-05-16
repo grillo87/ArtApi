@@ -1,8 +1,14 @@
 # ArtApi
-App demo created for final work of edx Course - GalileoX: CTec001x Desarrollo de aplicaciones profesionales para Android.
+This app is developed as a Demo for the Clean Architecture principle.
 
-This Demo app was develop for educational purposes only as the final assignment for the edx Course - GalileoX: CTec001x Desarrollo de aplicaciones profesionales para Android.
+For this app, the following project has been used as blueprint.
 
-It has an Appiary Api, wich gives a list of Pictures of a Museum, that are displayed in a RecyclerView inside the Project.
+https://github.com/artjimlop/clean-architecture-example
 
-It has Retrofit2, to consume the web Services, and Glide for Image Loading.
+For this app the Retrofit2, Dagger and RXJava has been used, also it has a Google Admobs implementation.
+
+The concept in this app is to display a list of famous paintings, and when one is clicked the detail of the painting is displayed.
+
+You could download the demo on:
+
+http://play.google.com/store/apps/details?id=com.grillo.edx.artapi
