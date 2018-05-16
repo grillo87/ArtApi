@@ -15,4 +15,7 @@
     <string name="activity_painting_list_error_message">There has been an error trying to get the paintings</string>
     <string name="activity_painting_detail_error_message">There has been an error trying to set the painting elements</string>
 
+    <string name="activity_painting_detail_banner_identification">PLACE YOUR BANNER ID HERE</string>
+    <string name="activity_painting_list_banner_identification">PLACE YOUR BANNER ID HERE</string>
+
 </resources>

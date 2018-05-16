@@ -55,27 +55,26 @@ ext {
     ]
 
     libraries = [
-            appcompat             : "27.1.1",
-            support               : "27.1.1",
-            design                : "27.1.1",
-            recyclerview          : "27.1.1",
-            butterknife           : "8.2.1",
-            glide                 : "3.7.0",
-            retrofit              : "2.1.0",
-            interceptor           : "3.4.1",
-            okhttp                : "2.2.0",
-            rxandroid             : "1.2.1",
-            rxjava                : "1.1.6",
-            rxproguard            : "1.1.10.0",
-            retrolambda           : "2.3.0",
-            dagger                : "2.5",
-            annotation            : "1.0",
-            javax_annotation      : "10.0-b28",
-            dagger                : "2.4",
-            sugar                 : "1.4",
-            materialish_progress  : "1.5",
-            logging_interceptor   : "2.0.2",
-            gson                  : "2.7"
+            appcompat           : "27.1.1",
+            support             : "27.1.1",
+            design              : "27.1.1",
+            app_mob             : "15.0.1",
+            recyclerview        : "27.1.1",
+            glide               : "3.7.0",
+            retrofit            : "2.1.0",
+            interceptor         : "3.4.1",
+            okhttp              : "2.2.0",
+            rxandroid           : "1.2.1",
+            rxjava              : "1.1.6",
+            rxproguard          : "1.1.10.0",
+            retrolambda         : "2.3.0",
+            dagger              : "2.5",
+            annotation          : "1.0",
+            javax_annotation    : "10.0-b28",
+            dagger              : "2.4",
+            materialish_progress: "1.5",
+            logging_interceptor : "2.0.2",
+            gson                : "2.7"
     ]
 
 }

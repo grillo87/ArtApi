@@ -10,6 +10,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.base.BaseActivity;
 import com.grillo.edx.artapi.injector.component.ApplicationComponent;
@@ -30,6 +33,7 @@ import javax.inject.Inject;
 public class PaintingListActivity extends BaseActivity implements PaintingListView, PaintingListClickInterface {
 
     private RecyclerView activityPaintingListRecyclerView;
+    private AdView activityPaintingListBannerAdview;
     private Dialog dialog;
 
     private PaintingListAdapter paintingListAdapter;
@@ -62,6 +66,7 @@ public class PaintingListActivity extends BaseActivity implements PaintingListVi
         appToolbar = (Toolbar) findViewById(R.id.app_toolbar);
         appToolbarTitle = (TextView) findViewById(R.id.app_toolbar_title);
         activityPaintingListRecyclerView = (RecyclerView) findViewById(R.id.activity_painting_list_recycler_view);
+        activityPaintingListBannerAdview = (AdView) findViewById(R.id.activity_painting_list_banner_adview);
 
     }
 
@@ -82,6 +87,15 @@ public class PaintingListActivity extends BaseActivity implements PaintingListVi
     public void onItemClick(View view, int position) {
 
         navigator.goToPaintingDetail(getActivity(), paintingListAdapter.getElementAtIndex(position));
+
+    }
+
+    @Override
+    public void initializePaintingListBanner() {
+
+        MobileAds.initialize(this, getActivity().getResources().getString(R.string.activity_painting_list_banner_identification));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        activityPaintingListBannerAdview.loadAd(adRequest);
 
     }
 

@@ -4,6 +4,8 @@ import com.grillo.edx.artapi.model.PaintingModel;
 
 public interface PaintingDetailView extends View {
 
+    void initializePaintingDetailBanner();
+
     void setUpPantingElements(PaintingModel paintingModel);
 
     void showGenericError();

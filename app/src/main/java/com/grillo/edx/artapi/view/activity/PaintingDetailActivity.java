@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.base.BaseActivity;
 import com.grillo.edx.artapi.injector.component.ApplicationComponent;
@@ -36,6 +39,7 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
     private TextView activityDetailPaintingTextView;
     private TextView activityDetailPaintingAuthorTextView;
     private TextView activityDetailPaintingDetailTextView;
+    private AdView activityPaintingDetailBannerAdview;
 
     @Inject
     PaintingDetailPresenter paintingDetailPresenter;
@@ -47,6 +51,7 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
         super.onCreate(savedInstanceState);
 
         setUpToolbar(true);
+        initializePaintingDetailBanner();
 
     }
 
@@ -81,6 +86,7 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
         activityDetailPaintingTextView = (TextView) findViewById(R.id.activity_detail_painting_text_view);
         activityDetailPaintingAuthorTextView = (TextView) findViewById(R.id.activity_detail_painting_author_text_view);
         activityDetailPaintingDetailTextView = (TextView) findViewById(R.id.activity_detail_painting_detail_text_view);
+        activityPaintingDetailBannerAdview = (AdView) findViewById(R.id.activity_painting_detail_banner_adview);
 
     }
 
@@ -111,6 +117,15 @@ public class PaintingDetailActivity extends BaseActivity implements PaintingDeta
         Intent callingIntent = new Intent(context, PaintingDetailActivity.class);
         callingIntent.putExtra(EXTRA_PAINTING, paintingModel);
         return callingIntent;
+    }
+
+    @Override
+    public void initializePaintingDetailBanner() {
+
+        MobileAds.initialize(this, getActivity().getResources().getString(R.string.activity_painting_detail_banner_identification));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        activityPaintingDetailBannerAdview.loadAd(adRequest);
+
     }
 
     @Override

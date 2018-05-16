@@ -45,5 +45,6 @@
     <dimen name="activity_painting_detail_divider_height">1dp</dimen>
     <dimen name="activity_painting_detail_lateral_margins">16dp</dimen>
     <dimen name="activity_painting_detail_bar_height">290dp</dimen>
+    <dimen name="app_banner_height">100dp</dimen>
 
 </resources>

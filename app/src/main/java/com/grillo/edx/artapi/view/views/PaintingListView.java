@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface PaintingListView extends View {
 
+    void initializePaintingListBanner();
+
     void showLoadingDialog();
 
     void hideLoadingDialog();

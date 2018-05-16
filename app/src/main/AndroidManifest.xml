@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.activity.MainActivity" />
         <activity
             android:name=".view.activity.PaintingListActivity"
             android:label="@string/title_activity_painting_list"
