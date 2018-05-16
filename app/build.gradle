@@ -6,6 +6,12 @@ def libs = rootProject.ext.libraries
 android {
     compileSdkVersion cfg.compileVersion
 
+    lintOptions {
+
+        checkReleaseBuilds false
+
+    }
+
     defaultConfig {
         applicationId cfg.package
         minSdkVersion cfg.minSdk
