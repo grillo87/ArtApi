@@ -1,4 +1,4 @@
-package com.grillo.edx.artapi.main.adapters;
+package com.grillo.edx.artapi.view.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -10,11 +10,12 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.grillo.edx.artapi.R;
-import com.grillo.edx.artapi.main.interfaces.AdapterInterface;
-import com.grillo.edx.artapi.main.viewholders.PaintViewHolder;
-import com.grillo.edx.artapi.domain.bean.Painting;
+import com.grillo.edx.artapi.model.PaintingModel;
+import com.grillo.edx.artapi.view.listener.PaintingListClickInterface;
+import com.grillo.edx.artapi.view.holder.PaintViewHolder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jose on 09/07/16.
@@ -23,16 +24,17 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private Context context;
     private LayoutInflater layoutInflater;
-    private ArrayList<Painting> items;
-    private AdapterInterface adapterInterface;
+    private ArrayList<PaintingModel> items;
+    private PaintingListClickInterface paintingListClickInterface;
     private Typeface customTypeFace;
 
-    public PaintingListAdapter(Context context, ArrayList<Painting> items, AdapterInterface adapterInterface, Typeface customTypeFace) {
+    public PaintingListAdapter(Context context, List<PaintingModel> items, PaintingListClickInterface paintingListClickInterface, Typeface customTypeFace) {
 
-        this.items = items;
+        this.items = new ArrayList<PaintingModel>();
+        this.items.addAll(items);
         this.context = context;
         this.layoutInflater = LayoutInflater.from(this.context);
-        this.adapterInterface = adapterInterface;
+        this.paintingListClickInterface = paintingListClickInterface;
         this.customTypeFace = customTypeFace;
 
     }
@@ -42,7 +44,7 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = layoutInflater.inflate(R.layout.paint_view_holder, parent, false);
-        PaintViewHolder holder = new PaintViewHolder(view, this.adapterInterface);
+        PaintViewHolder holder = new PaintViewHolder(view, this.paintingListClickInterface);
 
         return holder;
     }
@@ -50,7 +52,7 @@ public class PaintingListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        final Painting painting = this.items.get(position);
+        final PaintingModel painting = this.items.get(position);
         PaintViewHolder viewHolder = (PaintViewHolder) holder;
 
         Glide.with(context).load(painting.getUrl()).asBitmap()

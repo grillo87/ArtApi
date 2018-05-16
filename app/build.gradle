@@ -42,6 +42,8 @@ dependencies {
     compileOnly "org.glassfish:javax.annotation:${libs.javax_annotation}"
     implementation "com.google.dagger:dagger:${libs.dagger}"
 
+    implementation "com.github.ihsanbal:LoggingInterceptor:${libs.logging_interceptor}"
+
     implementation 'com.google.code.gson:gson:2.6.2'
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'

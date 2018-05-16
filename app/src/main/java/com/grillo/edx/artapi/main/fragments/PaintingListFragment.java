@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 
 import com.grillo.edx.artapi.R;
 import com.grillo.edx.artapi.main.activity.MainActivity;
-import com.grillo.edx.artapi.main.adapters.PaintingListAdapter;
-import com.grillo.edx.artapi.main.interfaces.AdapterInterface;
+import com.grillo.edx.artapi.view.adapter.PaintingListAdapter;
+import com.grillo.edx.artapi.view.listener.PaintingListClickInterface;
 import com.grillo.edx.artapi.domain.bean.Painting;
 import com.grillo.edx.artapi.utils.Utils;
 import com.grillo.edx.artapi.data.net.PaintingApiService;
@@ -28,7 +28,7 @@ import retrofit2.Retrofit;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PaintingListFragment extends Fragment implements AdapterInterface, Callback<ArrayList<Painting>> {
+public class PaintingListFragment extends Fragment implements PaintingListClickInterface, Callback<ArrayList<Painting>> {
 
     public static final String LOG_TAG = "PaintingListFragment";
     private RecyclerView fragmentPaintingListRecyclerView;
@@ -76,7 +76,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
         dialog.dismiss();
         paintings = response.body();
 
-        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), paintings, fragment, activity.customTypeFace);
+        //paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), paintings, fragment, activity.customTypeFace);
         fragmentPaintingListRecyclerView.setAdapter(paintingListAdapter);
         fragmentPaintingListRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
 
@@ -85,7 +85,7 @@ public class PaintingListFragment extends Fragment implements AdapterInterface, 
     @Override
     public void onFailure(Call<ArrayList<Painting>> call, Throwable t) {
 
-        paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), new ArrayList<Painting>(), fragment, activity.customTypeFace);
+        //paintingListAdapter = new PaintingListAdapter(activity.getApplicationContext(), new ArrayList<Painting>(), fragment, activity.customTypeFace);
         fragmentPaintingListRecyclerView.setAdapter(paintingListAdapter);
         fragmentPaintingListRecyclerView.setLayoutManager(new LinearLayoutManager(activity));
 

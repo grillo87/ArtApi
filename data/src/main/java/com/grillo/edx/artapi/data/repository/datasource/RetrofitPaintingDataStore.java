@@ -1,8 +1,11 @@
 package com.grillo.edx.artapi.data.repository.datasource;
 
+import android.util.Log;
+
 import com.grillo.edx.artapi.data.bean.PaintingsResponseDto;
 import com.grillo.edx.artapi.data.bean.mapper.PaintingsResponseDtoMapper;
 import com.grillo.edx.artapi.data.exception.PaintingsNotFoundException;
+import com.grillo.edx.artapi.data.net.ApiConstants;
 import com.grillo.edx.artapi.data.net.PaintingApiService;
 
 import javax.inject.Inject;
@@ -30,14 +33,26 @@ public class RetrofitPaintingDataStore implements PaintingDataStore {
             @Override
             public void onResponse(Call<PaintingsResponseDto> call, Response<PaintingsResponseDto> response) {
                 if (response != null) {
-                    paintingListCallback.onPaintingListLoaded(paintingsResponseDtoMapper.toBusinessObjects(response.body()));
+
+                    if (response.body().getStatus().equals(ApiConstants.OK_VALUE)) {
+
+                        paintingListCallback.onPaintingListLoaded(paintingsResponseDtoMapper.toBusinessObjects(response.body()));
+
+                    } else {
+
+                        paintingListCallback.onError(new PaintingsNotFoundException(response.body().getMessage()));
+
+                    }
+
                 } else {
+
                     paintingListCallback.onError(new PaintingsNotFoundException());
                 }
             }
 
             @Override
             public void onFailure(Call<PaintingsResponseDto> call, Throwable t) {
+
                 paintingListCallback.onError(new PaintingsNotFoundException(t.getMessage()));
             }
         });

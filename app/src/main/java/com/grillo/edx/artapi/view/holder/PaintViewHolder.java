@@ -1,4 +1,4 @@
-package com.grillo.edx.artapi.main.viewholders;
+package com.grillo.edx.artapi.view.holder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grillo.edx.artapi.R;
-import com.grillo.edx.artapi.main.interfaces.AdapterInterface;
+import com.grillo.edx.artapi.view.listener.PaintingListClickInterface;
 
 /**
  * Created by jose on 09/07/16.
@@ -17,7 +17,7 @@ public class PaintViewHolder extends RecyclerView.ViewHolder {
     private TextView paintViewHolderTextView;
 
 
-    public PaintViewHolder(View itemView, final AdapterInterface adapterInterface) {
+    public PaintViewHolder(View itemView, final PaintingListClickInterface paintingListClickInterface) {
         super(itemView);
 
         paintViewHolderImageView = (ImageView) itemView.findViewById(R.id.paint_view_holder_image_view);
@@ -27,7 +27,7 @@ public class PaintViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 
-                adapterInterface.onItemClick(v, getAdapterPosition());
+                paintingListClickInterface.onItemClick(v, getAdapterPosition());
 
             }
         });

@@ -2,6 +2,7 @@ package com.grillo.edx.artapi.injector.module;
 
 import android.content.Context;
 
+import com.grillo.edx.artapi.BuildConfig;
 import com.grillo.edx.artapi.base.AndroidApplication;
 import com.grillo.edx.artapi.base.UIThread;
 import com.grillo.edx.artapi.data.executor.JobExecutor;
@@ -14,11 +15,16 @@ import com.grillo.edx.artapi.domain.executor.PostExecutionThread;
 import com.grillo.edx.artapi.domain.executor.ThreadExecutor;
 import com.grillo.edx.artapi.domain.repository.PaintingRepository;
 
+import com.ihsanbal.logging.Level;
+import com.ihsanbal.logging.LoggingInterceptor;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.internal.platform.Platform;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -65,12 +71,23 @@ public class ApplicationModule {
     @Singleton
     PaintingApiService provideComicPaintingService() {
 
-        OkHttpClient httpClient = new OkHttpClient.Builder()
-                .build();
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
+        httpClient.addInterceptor(new LoggingInterceptor.Builder()
+                .loggable(true)
+                .setLevel(Level.BASIC)
+                .log(Platform.INFO)
+                .request("Request")
+                .response("Response")
+                .addHeader("version", BuildConfig.VERSION_NAME)
+                .addHeader("Accept", "application/json")
+                .build());
+
+        OkHttpClient client = httpClient.build();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ApiConstants.BASE_URL)
-                .client(httpClient)
+                .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

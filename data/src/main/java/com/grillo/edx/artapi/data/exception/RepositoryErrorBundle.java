@@ -1,5 +1,7 @@
 package com.grillo.edx.artapi.data.exception;
 
+import android.util.Log;
+
 import com.grillo.edx.artapi.domain.exception.ErrorBundle;
 
 public class RepositoryErrorBundle implements ErrorBundle {
@@ -19,10 +21,15 @@ public class RepositoryErrorBundle implements ErrorBundle {
 
     @Override
     public String getErrorMessage() {
+
         String message = "";
+
         if (this.exception != null) {
-            this.exception.getMessage();
+
+            message = this.exception.getMessage();
+
         }
+
         return message;
     }
 }

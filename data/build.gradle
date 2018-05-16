@@ -43,5 +43,4 @@ dependencies {
     implementation "io.reactivex:rxjava:${libs.rxjava}"
     implementation "com.google.dagger:dagger:${libs.dagger}"
     implementation "org.glassfish:javax.annotation:${libs.javax_annotation}"
-    implementation "com.github.ihsanbal:LoggingInterceptor:${libs.logging_interceptor}"
 }

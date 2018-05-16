@@ -1,5 +1,7 @@
 package com.grillo.edx.artapi.data.repository;
 
+import android.util.Log;
+
 import com.grillo.edx.artapi.data.exception.RepositoryErrorBundle;
 import com.grillo.edx.artapi.data.repository.datasource.PaintingDataStore;
 import com.grillo.edx.artapi.data.repository.datasource.PaintingDataStoreFactory;
@@ -26,11 +28,13 @@ public class PaintingsRepositoryImpl implements PaintingRepository {
         remotePaintingDataStore.getPaintings(new PaintingDataStore.PaintingListCallback() {
             @Override
             public void onPaintingListLoaded(Collection<Painting> paintingCollection) {
+
                 paintingListCallback.onPaintingsLoaded(paintingCollection);
             }
 
             @Override
             public void onError(Exception exception) {
+
                 paintingListCallback.onError(new RepositoryErrorBundle(exception));
             }
         });
