@@ -48,6 +48,8 @@ public class PaintingListActivity extends BaseActivity implements PaintingListVi
 
         super.onCreate(savedInstanceState);
 
+        initializePaintingListBanner();
+
     }
 
     @Override

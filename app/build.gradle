@@ -33,14 +33,14 @@ dependencies {
     implementation project(':data')
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
-    implementation 'com.android.support:design:27.1.1'
-    testImplementation 'junit:junit:4.12'
-    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+
+    testImplementation "junit:junit:${libs.junit}"
 
     implementation "com.android.support:support-v4:${libs.support}"
+    implementation "com.android.support:design:${libs.support}"
     implementation "com.android.support:recyclerview-v7:${libs.recyclerview}"
     implementation "com.android.support:appcompat-v7:${libs.appcompat}"
+    implementation "com.android.support.constraint:constraint-layout:${libs.constrain}"
 
     implementation "com.pnikosis:materialish-progress:${libs.materialish_progress}"
 
@@ -52,9 +52,9 @@ dependencies {
 
     implementation "com.google.android.gms:play-services-ads:${libs.app_mob}"
 
-    implementation 'com.google.code.gson:gson:2.6.2'
-    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation "com.google.code.gson:gson:${libs.logging_interceptor}"
+    implementation "com.squareup.retrofit2:retrofit:${libs.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${libs.retrofit}"
 
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation "com.github.bumptech.glide:glide:${libs.glide}"
 }

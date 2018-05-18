@@ -29,15 +29,15 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="rxjava-1.1.6" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="dagger-2.4" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="gson-2.7" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="gson-2.6.2" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="rxjava-1.1.6" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="dagger-2.4" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="gson-2.7" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="gson-2.6.2" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rxjava-1.1.6" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="dagger-2.4" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="gson-2.7" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="gson-2.6.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
   </component>
 </module>

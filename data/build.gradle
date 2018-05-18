@@ -4,15 +4,15 @@ def cfg = rootProject.ext.configuration
 def libs = rootProject.ext.libraries
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion cfg.compileVersion
 
 
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode rootProject.getDate().toBigInteger()
+        versionName "${cfg.version_versionMajor}.${cfg.version_versionMinor}.${cfg.version_versionPatch}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
