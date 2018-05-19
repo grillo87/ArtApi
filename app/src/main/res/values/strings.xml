@@ -9,13 +9,13 @@
 
     <string name="loading_paints">Getting paintings</string>
     <string name="fragment_detail_painting_year_format">(%s)</string>
-    <string name="activity_painting_detail_author_year_format">%s1 (%s2)</string>
+    <string name="activity_painting_detail_author_year_format">%1$s (%2$s)</string>
     <string name="activity_painting_detail_app_bar_title">Details of %s</string>
     <string name="title_activity_painting_list">PaintingListActivity</string>
     <string name="activity_painting_list_error_message">There has been an error trying to get the paintings</string>
     <string name="activity_painting_detail_error_message">There has been an error trying to set the painting elements</string>
 
-    <string name="activity_painting_detail_banner_identification">INSERT YOUR KEY</string>
-    <string name="activity_painting_list_banner_identification">INSERT YOUR KEY</string>
+    <string name="activity_painting_detail_banner_identification">INSERT YOUR KEY HERE</string>
+    <string name="activity_painting_list_banner_identification">INSERT YOUR KEY HERE</string>
 
 </resources>

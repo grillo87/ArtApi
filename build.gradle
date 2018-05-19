@@ -51,7 +51,7 @@ ext {
             targetSdk           : 27,
             version_versionMajor: "1",
             version_versionMinor: "0",
-            version_versionPatch: "1"
+            version_versionPatch: "2"
     ]
 
     libraries = [
